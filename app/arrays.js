@@ -21,11 +21,9 @@ exports.arraysAnswers = {
   // iterates through array, if an item does not match push that value into a new array
   remove: function(arr, item) {
     var newArr = [];
-    for (var i=0; i < arr.length; i++) {
-      if (arr[i] !== item) {
-        newArr.push(arr[i]);
-      }
-    }
+    arr.forEach(value => {
+      if (value !== item) { newArr.push(value) }
+    })
     return newArr;
   },
 
@@ -75,11 +73,9 @@ exports.arraysAnswers = {
 
   count: function(arr, item) {
     var count = 0;
-    for (var i=0; i < arr.length; i++) {
-      if (arr[i] === item) {
-        count++;
-      }
-    }
+    arr.forEach(function(value) {
+      if (value === item) { count++; }
+    });
     return count;
   },
 
