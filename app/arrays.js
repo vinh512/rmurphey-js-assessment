@@ -8,7 +8,7 @@ exports.arraysAnswers = {
         return i;
       }
     }
-    return -1; // if not found return -1
+    return -1; // if not found  return -1
   },
 
   sum: function(arr) {
@@ -30,15 +30,25 @@ exports.arraysAnswers = {
   },
 
   removeWithoutCopy: function(arr, item) {
-
+    for (var i = 0, len = arr.length; i < len; i++) {
+      if (arr[i] === item) {
+        arr.splice(i, 1);
+        // the array has been mutated and its length decreased so the count-decrements takes that into account
+        i--;
+        len--;
+      }
+    }
+    return arr;
   },
 
   append: function(arr, item) {
-
+    arr.push(item);
+    return arr;
   },
 
   truncate: function(arr) {
-
+    arr.pop();
+    return arr;
   },
 
   prepend: function(arr, item) {
