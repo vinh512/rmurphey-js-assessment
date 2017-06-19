@@ -104,10 +104,18 @@ exports.arraysAnswers = {
   },
 
   square: function(arr) {
-
+    return arr.map(function(value) {
+      return value * value;
+    });
   },
 
   findAllOccurrences: function(arr, target) {
-
+    var newArr = [];
+    for (var i=0; i < arr.length; i++) {
+      if (arr[i] === target) {
+        newArr.push(i);
+      }
+    }
+    return newArr;
   }
 };
